@@ -1,6 +1,6 @@
 # 9781783280339_angularjs-directives
 
-## [AngularJS Directives](https://amzn.to/3AFf6li) :arrow_left: [AD]
+AngularJS Directives](https://amzn.to/3AFf6li) :arrow_left: [AD]  
 by Alex Vanston
 
 ___
