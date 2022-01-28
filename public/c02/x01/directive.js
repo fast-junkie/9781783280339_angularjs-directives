@@ -5,7 +5,7 @@
 
   tweet.$inject = ['api'];
   function tweet(api) {
-    return ($scope, $elem, $attr) => {
+    return ($scope) => {
       $scope.retweet = () => {
         api.retweet($scope.tweet);
       };
