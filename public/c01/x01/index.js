@@ -3,12 +3,12 @@
 
   const data = [
     {
-      author: 'mrvdot',
-      text: 'Check out my new Angular widget!',
+      author: 'fast_junkie',
+      text: 'Read @IntelTechniques "Extreme Privacy" book... loads of #cool for the #privacy advocate...',
     },
     {
-      author: 'mrvdot',
-      text: 'I love directives!',
+      author: 'fast_junkie',
+      text: 'Never make eye contact while eating a banana. 🤣',
     },
   ];
 

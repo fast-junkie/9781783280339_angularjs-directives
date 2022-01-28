@@ -16,9 +16,12 @@
       <div class="loader" ng-if="!vm.loaded">
         <img src="/assets/img/loading.svg" alt="loading...">
       </div>
-      <p ng-repeat="tweet in vm.tweets">
-        @{{tweet.author}}: {{tweet.text}}
-      </p>
+      <dl ng-repeat="tweet in vm.tweets">
+        <dt>
+          <a href="https://twitter.com/{{tweet.author}}">@<span ng-bind="tweet.author"></span></a>:
+        </dt>
+        <dd ng-bind="tweet.text"></dd>
+      </dl>
     </div>
     
     <script src="/assets/vendor/jquery/jquery.min.js"></script>
