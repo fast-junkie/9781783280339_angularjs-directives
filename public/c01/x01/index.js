@@ -16,17 +16,21 @@
     .module('fj.app')
     .controller('WidgetController', widgetController);
 
-  widgetController.$inject = ['$timeout'];
-  function widgetController($timeout) {
+  widgetController.$inject = ['$interval'];
+  function widgetController($interval) {
     const vm = this;
     vm.loaded = false;
     vm.tweets = [];
 
-    $timeout(init, 3e3);
+    const interval = $interval(init, 1e3);
 
     function init() {
-      vm.loaded = !vm.loaded;
-      vm.tweets = data;
+      if (document.readyState === 'complete') {
+        console.info('complete...');
+        $interval.cancel(interval);
+        vm.loaded = !vm.loaded;
+        vm.tweets = data;
+      }
     }
   }
 })();
