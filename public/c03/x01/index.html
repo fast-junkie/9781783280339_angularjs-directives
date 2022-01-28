@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="fj.app">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="./app.css">
+    <title></title>
+  </head>
+  <body>
+
+    <div ng-controller="WidgetController as vm">
+      <h3>My Tweets</h3>
+      <div class="loader" ng-if="!vm.loaded">
+        <img src="/assets/img/loading.svg" alt="loading...">
+      </div>
+      <dl ng-repeat="tweet in vm.tweets" tweet>
+        <dt>
+          <a href="https://twitter.com/{{tweet.author}}">@<span ng-bind="tweet.author"></span></a>:
+        </dt>
+        <dd>
+          <span ng-bind="tweet.text"></span>
+          <div class="btn-group">
+            <button ng-click="retweet(tweet.text)">ReTweet</button>
+            <button ng-click="reply(tweet.text)">Reply</button>
+          </div>
+        </dd>
+      </dl>
+    </div>
+
+    <footer>
+      <button onclick="window.history.back();">&laquo;</button> back
+    </footer>
+    
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/vendor/angular/angular.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./services/api.js"></script>
+    <script src="./directives/tweet.js"></script>
+    <script src="./controllers/widgetController.js"></script>
+  </body>
+</html>
