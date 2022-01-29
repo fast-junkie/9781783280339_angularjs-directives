@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/assets/vendor/angular', express.static(path.join(__dirname, 'node_modules', 'angular')));
 app.use('/assets/vendor/jquery', express.static(path.join(__dirname, 'node_modules', 'jquery', 'dist')));
 app.use('/assets/vendor/timepicker', express.static(path.join(__dirname, 'node_modules', 'timepicker')));
+app.use('/assets/vendor/waypoints', express.static(path.join(__dirname, 'node_modules', 'jquery-waypoints')));
 
 // Routes
 

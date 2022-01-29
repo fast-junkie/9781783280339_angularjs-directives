@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="fj.app">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="./app.css">
+    <title></title>
+  </head>
+  <body>
+
+    <div ng-controller="WidgetController">
+      <div class="loader" ng-if="!loaded">
+        <img src="/assets/img/loading.svg" alt="loading...">
+      </div>
+      <div id="widget" ng-if="loaded">
+        <input type="text" ng-model="name" />
+        <select ng-model="movie">
+          <option value="Alien vs. Predator">Predator</option>
+          <option value="Revenge of the Fallen">Transformers</option>
+        </select>
+        <input type="number" ng-model="friendCount" />
+        <div movie-info="movie">
+          <p>
+            Hi, I'm <b ng-bind="name"></b>, and I'm going to see 
+            <b ng-bind="movie"></b> with <b ng-bind="friendCount"></b> 
+            friends.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <button onclick="window.history.back();">&laquo;</button> back
+    </footer>
+    
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/vendor/angular/angular.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./directives/movieInfo.js"></script>
+    <script src="./controllers/widgetController.js"></script>
+  </body>
+</html>
