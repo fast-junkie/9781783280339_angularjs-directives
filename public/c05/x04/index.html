@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="fj.app">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="./app.css">
+    <title></title>
+  </head>
+  <body>
+
+    <div ng-controller="WidgetController" ng-init="title = 'Hello World'; subtitle = 'I am an app'">
+      <div class="loader" ng-if="!loaded">
+        <img src="/assets/img/loading.svg" alt="loading...">
+      </div>
+      <div id="widget" ng-if="loaded">
+        <h3 id="app-title" ng-bind="title"></h3>
+        <h4 id="app-subtitle" ng-bind="subtitle"></h4>
+        <button id="newAppTitle" ng-click="setAppTitle('Hello... jars of clay 2.0...')">Upgrade Me</button>
+        <div my-scoped-directive msd-title="I'm a directive, within the app {{title}}">
+          <h4 id="directiveTitle" ng-bind="title"></h4>
+          <button id="newDirTitle" ng-click="setDirectiveTitle('You\'ve been Junkied...')">Junkie it!</button>
+          <button id="newDirSub" ng-click="setDirectiveSubtitle('Time to submerge')">Empty the ballasts!</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <button onclick="window.history.back();">&laquo;</button> back
+    </footer>
+    
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/vendor/angular/angular.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./directives/myScopedDirective.js"></script>
+    <script src="./controllers/widgetController.js"></script>
+  </body>
+</html>
