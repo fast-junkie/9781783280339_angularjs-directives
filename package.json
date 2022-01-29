@@ -11,15 +11,16 @@
   "license": "copyleft-next-0.3.1",
   "dependencies": {
     "angular": "1.8.2",
-    "jquery": "3.6.0"
+    "debug": "4.3.3",
+    "express": "4.17.2",
+    "jquery": "3.6.0",
+    "morgan": "1.10.0",
+    "timepicker": "1.13.18"
   },
   "devDependencies": {
-    "debug": "4.3.3",
     "eslint": "8.7.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.25.4",
-    "express": "4.17.2",
-    "morgan": "1.10.0",
     "nodemon": "2.0.15"
   }
 }
